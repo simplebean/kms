@@ -2,11 +2,15 @@
 KMS 激活服务，slmgr 命令激活 Windows 系统、Office
 
 Windows Server 2012 R2
+
 DISM /online /Get-CurrentEdition
+
 DISM /online /Set-Edition:ServerStandard /ProductKey:M98WF-NY2PP-73243-PC8R6-V6B4Y /AcceptEula
 
 slmgr /ipk D2N9P-3P6X9-2R39C-7RTCD-MDVJX
+
 slmgr /skms kms.0t.net.cn or kms.03k.org
+
 slmgr /ato
 
 ### Windows Server（LTSC 版本）
