@@ -1,39 +1,13 @@
 # KMS
 KMS 激活服务，slmgr 命令激活 Windows 系统、Office
 
-### 激活步骤（管理员命令执行）
-1. 设置服务 `slmgr -skms skms.netnr.eu.org`
-2. 安装密钥 `slmgr -ipk 版本对应秘钥`
-3. 激活系统 `slmgr -ato`
+Windows Server 2012 R2
+DISM /online /Get-CurrentEdition
+DISM /online /Set-Edition:ServerStandard /ProductKey:M98WF-NY2PP-73243-PC8R6-V6B4Y /AcceptEula
 
-### 可用服务
-- `skms.netnr.eu.org` 维护 **CNAME** 指向有效的服务
-
-+ `telnet skms.netnr.eu.org 1688` 测试服务是否可用
-+ `tcping skms.netnr.eu.org 1688`
-
-### 安装服务
-- ref: <https://github.com/Wind4/vlmcsd/releases>
-- Windows：[vlmcs-Windows](https://gs.zme.ink/static/app/vlmcs-Windows.zip)
-
-### 安装服务（Linux）
-```
-# 一键安装脚本
-wget --no-check-certificate https://raw.githubusercontent.com/teddysun/across/master/kms.sh && chmod +x kms.sh && ./kms.sh
-
-netstat -nxtlp | grep 1688 # 查看端口
-/etc/init.d/kms status # 状态
-/etc/init.d/kms start # 启动
-/etc/init.d/kms stop # 停止
-/etc/init.d/kms restart # 重启
-./kms.sh uninstall # 卸载
-```
-<https://teddysun.com/530.html>
-
-### 密钥 
-<https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys>
-
-[kms-client-activation-keys.md](https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/get-started/kms-client-activation-keys.md)
+slmgr /ipk D2N9P-3P6X9-2R39C-7RTCD-MDVJX
+slmgr /skms kms.0t.net.cn or kms.03k.org
+slmgr /ato
 
 ### Windows Server（LTSC 版本）
 
